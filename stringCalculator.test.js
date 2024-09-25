@@ -14,3 +14,9 @@ test('return number for single number string', () => {
 test('return sum of two number string', () => {
     expect(add("1,3")).toBe(4);
 });
+
+// 4.test--> handle new lines between numbers
+
+test('return sum with new lines between numbers', () =>{
+    expect(add("1\n2,3")).toBe(6);
+});
