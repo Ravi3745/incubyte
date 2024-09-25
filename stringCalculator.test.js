@@ -23,4 +23,9 @@ test('return sum with new lines between numbers', () =>{
 // 5.test--> custom Delimiters
 test('supports custom Delimiters', () =>{
     expect(add("//;\n1;2")).toBe(3);
+});
+
+// 6. handle negative numbers
+test('throws an error for negative numbers', () =>{
+    expect(() => add("1,-2,3")).toThrow("Negative numbers not allowed: -2");
 })

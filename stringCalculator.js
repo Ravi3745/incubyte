@@ -8,8 +8,13 @@ function add(numbers) {
         delimiter = new RegExp(`[${parts[0].charAt(2)}]`);
         numbers = parts[1];
     }
-    const numArray = numbers.split(delimiter);
+    const numArray = numbers.split(delimiter).map(num => parseInt(num));
 
+    const negativeNumbers = numArray.filter(num => num < 0);
+    if(negativeNumbers.length > 0){
+        throw new Error(`Negative numbers not allowed: ${negativeNumbers.join(", ")}`);
+    }
+    
     const sum = numArray.reduce((curr, acc) => (curr += parseInt(acc)), 0);
     return sum;
 }
