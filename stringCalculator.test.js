@@ -16,7 +16,11 @@ test('return sum of two number string', () => {
 });
 
 // 4.test--> handle new lines between numbers
-
 test('return sum with new lines between numbers', () =>{
     expect(add("1\n2,3")).toBe(6);
 });
+
+// 5.test--> custom Delimiters
+test('supports custom Delimiters', () =>{
+    expect(add("//;\n1;2")).toBe(3);
+})
